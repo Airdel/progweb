@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body class="text-center">
+    <nav class="navbar navbar-light navbar-expand-md text-end">
+        <div class="container-fluid"><a class="navbar-brand" href="index.html">Expediente Clínico Digital</a><button
+                data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                    class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-end" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" routerLink="/inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/aboutus">Conócenos</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/transparent">Transparencia</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/login">Iniciar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <span class="h3">Listado de Pacientes</span>
+               
+                <h5 style="margin-top: 30px;" *ngIf="pacientes.length == 0">No hay datos para mostrar</h5>
+                <table *ngIf="pacientes.length > 0" class="table table-striped mt-5">
+                    <thead>
+                      <tr>
+                        <th>Numero Seguro</th>
+                        <th>Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Fecha nac.</th>
+                        <th>CURP</th>
+                        
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let paciente of pacientes">
+                        <td>{{ paciente.numsc }}</td>
+                        <td>{{ paciente.nombre }}</td>
+                        <td>{{ paciente.apppat }}</td>
+                        <td>{{ paciente.appmat}}</td>
+                        <td>{{ paciente.fecha}}</td>
+                        <td>{{ paciente.curp }}</td>
+                        <td>
+                          <i click="" class="fas fa-check"></i>
+                        
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  
+            </div>
+        </div>
+    </div>
+
+        <div class="container mt-4">
+          <div class="card">
+            <div class="card-body">
+              <span class="h3">Listado de Consultas</span>
+              <button type="button" class="btn btn-success float-right"  routerLink="/register2">Agregar</button>
+              <h5 style="margin-top: 30px;" *ngIf="consultas.length == 0">No hay datos para mostrar</h5>
+              <table *ngIf="consultas.length > 0" class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th>Numero de Seguro Social</th>
+                    <th>Peso</th>
+                    <th>Altura</th>
+                    <th>Presión Arterial</th>
+                    <th>Padecimiento</th>
+                    <th>Medicación</th>
+        
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let consulta of consultas">
+                    <td>{{ consulta.numsc }}</td>
+                    <td>{{ consulta.peso }}</td>
+                    <td>{{ consulta.altura }}</td>
+                    <td>{{ consulta.pa}}</td>
+                    <td>{{ consulta.padecimiento}}</td>
+                    <td>{{ consulta.medicacion}}</td>
+                    <td>
+                      <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editConsulta/', consulta.id]"></i>
+                      <i (click)="eliminarConsulta(consulta.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                      
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        
+             
+            </div>
+          </div>
+        </div>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>

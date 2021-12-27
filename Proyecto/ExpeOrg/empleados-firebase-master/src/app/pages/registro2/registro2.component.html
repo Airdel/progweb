@@ -1,0 +1,127 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<nav class="navbar navbar-light navbar-expand-md text-end">
+    <div class="container-fluid"><a class="navbar-brand" href="index.html">Expediente Clínico Digital</a><button
+            data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse text-end" id="navcol-1">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" routerLink="/inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/aboutus">Conócenos</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/transparent">Transparencia</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/login">Iniciar sesión</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="shadow contact-clean" style="background: rgb(202,234,230);padding-top: 0px;">
+    <div>
+
+    <br>
+
+
+
+        <div class="tab-content">
+            <div class="tab-pane active" role="tabpanel" id="tab-1">
+                <div *ngIf="loading" class="spinner-border float-right" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+
+
+
+
+                <form class="bg-light border rounded border-secondary shadow-lg"
+                    style="background: rgb(248,248,249);padding-bottom: 40px;border-width: 0px;margin-top: 0px;"
+                    [formGroup]="createConsulta" (ngSubmit)="agregarEditarConsulta()">
+                    <div>
+                        <h2 class="text-center" style="padding-bottom: 0px;padding-top: 0px;">Registro de Consultas</h2>
+
+                       
+                                
+                                <h2 class="visually-hidden">Login Form</h2>                                
+                                <div class="illustration" style="text-align: center;"><i class="far fa-list-alt bounce animated"
+                                        style="font-size: 100px;margin: 20px;color: rgb(4,143,131);"></i></div>
+                       
+                            <div class="row">
+                               
+                            <input type="text" class="form-control" formControlName="numsc" placeholder="Num. Seguro Social"
+                                style="padding-bottom: 0px;padding-top: 0px;margin-top: 15px;">
+                               
+                                <div class="col">
+                            <input type="text" class="form-control" formControlName="peso" placeholder="Peso"
+                                style="margin-top: 15px;">
+                                
+                               
+                            <input type="text" class="form-control" formControlName="altura" placeholder="Altura"
+                                style="padding-bottom: 0px;padding-top: 5px;border-width: 1px;border-radius: 0px;margin-top: 15px;">
+                                    </div>
+                                <div class="col">
+                            <input type="text" class="form-control" formControlName="pa" placeholder="Presión Arterial"
+                                style="padding-bottom: 0px;padding-top: 0px;margin-top: 15px;">
+                                    </div>
+                                    <div class="row">
+                                    
+                            <input type="text" class="form-control" formControlName="padecimiento" placeholder="Padecimiento"
+                                style="padding-bottom: 0px;padding-top: 0px;margin-top: 15px;">
+                                        </div>
+                                       
+                            <input type="text" class="form-control" formControlName="medicacion" placeholder="Medicación"
+                                style="padding-bottom: 0px;padding-top: 0px;margin-top: 15px;">
+                                            
+
+                                </div>
+                                
+
+
+
+
+                        <br>
+                        <div class="text-center">
+                            <span align-items: center *ngIf="submitted && createConsulta.invalid"
+                                class="badge badge-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3"
+                        style="text-align: center;padding-bottom: 10px;padding-top: 1px;margin-top: 10px;margin-bottom: 16px;">
+                        <button class="btn btn-primary text-center link-danger" type="submit"
+                            style="background: var(--bs-gray-500);/*color: var(--bs-pink);*/padding-bottom: 16px;"><i
+                                class="fa fa-save"></i> Registrar</button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="tab-pane" role="tabpanel" id="tab-2">
+
+
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>

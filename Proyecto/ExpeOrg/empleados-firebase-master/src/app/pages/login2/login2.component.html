@@ -1,0 +1,37 @@
+<nav class="navbar navbar-light navbar-expand-md text-end">
+    <div class="container-fluid"><a class="navbar-brand" href="index.html">Expediente Clínico Digital</a><button
+            data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse text-end" id="navcol-1">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" routerLink="/inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/aboutus">Conócenos</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/transparent">Transparencia</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/login">Iniciar sesión</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="login-clean">
+    <form (ngSubmit)="acceder( fe )" #fe="ngForm" method="post">
+
+        <h2 class="visually-hidden">Login Form</h2>
+        <div class="illustration"><i class="fas fa-user-md bounce animated"></i></div>
+        <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Correo o CURP"
+                [(ngModel)]="correo1" name="correo1"></div>
+        <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Contraseña"
+                [(ngModel)]="password1" name="password1"></div>
+        <div class="mb-3"><button class="btn btn-primary d-block w-100" data-bss-hover-animate="pulse"
+                type="submit">Iniciar Sesión </button></div>
+
+        <a class="forgot" routerLink="/register">Crear nueva cuenta</a>
+        <a class="forgot" routerLink="/forgetpass">¿Olvidaste
+            tu contraseña o CURP?</a>
+        <br>
+        <a class="forgot" routerLink="/login">¿Eres un Paciente?
+            ¡Inicia sesión aquí! </a>
+
+
+
+    </form>
+</section>

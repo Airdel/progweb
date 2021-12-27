@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light navbar-expand-md text-end">
+    <div class="container-fluid"><a class="navbar-brand" href="index.html">Expediente Clínico Digital</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse text-end" id="navcol-1">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" routerLink="/inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/aboutus">Conócenos</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/transparencia">Transparencia</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/login">Iniciar sesión</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="login-clean2">
+    <form method="post">
+        <h2 class="visually-hidden">Login Form</h2>
+        <div class="illustration"><i class="far fa-user bounce animated"></i></div>
+        <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Correo"></div>
+        <div class="mb-3"></div>
+        <div class="mb-3"><button class="btn btn-primary d-block w-100" data-bss-hover-animate="pulse" type="submit">Enviar código</button></div><a class="forgot" routerLink="/login">Iniciar Sesión</a>
+    </form>
+</section>

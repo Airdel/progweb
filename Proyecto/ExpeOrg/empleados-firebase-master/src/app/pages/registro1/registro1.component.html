@@ -1,0 +1,135 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<nav class="navbar navbar-light navbar-expand-md text-end">
+    <div class="container-fluid"><a class="navbar-brand" href="index.html">Expediente Clínico Digital</a><button
+            data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse text-end" id="navcol-1">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" routerLink="/inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/aboutus">Conócenos</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/transparent">Transparencia</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/login">Iniciar sesión</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="shadow contact-clean" style="background: rgb(202,234,230);padding-top: 0px;">
+    <div>
+
+                <ul class="nav nav-tabs" role="tablist"
+                    style="padding: 0px;padding-bottom: 1rem;color: rgb(238,216,238);background: var(--bs-body-bg);border-width: 0px;margin: 0;height: 42px;margin-bottom: 1rem;">
+                
+
+                
+                    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-2"
+                            routerLink="/register">Medico</a></li>
+
+                    <li class="nav-item" role="presentation" style="transform-origin: top;"><a class="nav-link active" role="tab"
+                     data-bs-toggle="tab" routerLink="/register1"
+                     style="background: rgba(201,229,249,0);width: 93.0312px;border-color: var(--bs-body-bg);">Paciente</a>
+                                 </li>
+                </ul>
+
+
+        <div class="tab-content">
+            <div class="tab-pane active" role="tabpanel" id="tab-1">
+                <div *ngIf="loading" class="spinner-border float-right" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+               
+
+
+
+                <form class="bg-light border rounded border-secondary shadow-lg"
+                    style="background: rgb(248,248,249);padding-bottom: 40px;border-width: 0px;margin-top: 0px;"
+                    [formGroup]="createPaciente" (ngSubmit)="agregarEditarPaciente()">
+                    <div>
+                        <h2 class="text-center" style="padding-bottom: 0px;padding-top: 0px;">Registro Paciente</h2>
+
+                        <div class="text-center" style="padding-bottom: 1rem;padding-top: 0px;width: 399px;"><img
+                                src="assets/img/sneeze%20(1).png" width="180rem"></div>
+
+                        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre"
+                            style="padding-bottom: 0px;padding-top: 0px;margin-top: 15px;">
+
+
+                        <input type="text" class="form-control" formControlName="apppat" placeholder="Apellido Paterno"
+                            style="padding-bottom: 0px;padding-top: 0px;margin-top: 15px;">
+
+                        <input type="text" class="form-control" formControlName="appmat" placeholder="Apellido Materno"
+                            style="padding-bottom: 0px;padding-top: 5px;border-width: 1px;border-radius: 0px;margin-top: 15px;">
+                        <div></div>
+
+                        <input type="text" class="form-control" formControlName="numsc" placeholder="Número de Seguro Social"
+                            style="padding-bottom: 0px;padding-top: 0px;margin-top: 15px;">
+
+                        <input type="text" class="form-control" formControlName="correo"
+                            placeholder="Correo Electronico"
+                            style="padding-bottom: 0px;padding-top: 0px;margin-top: 15px;">
+
+                        <input type="date" class="form-control" formControlName="fecha" placeholder=""
+                            style="padding-bottom: 0px;padding-top: 0px;margin-top: 15px;">
+
+                        <small class="form-text"><p class="text-center">Ingrese su fecha de nacimiento</p></small>
+
+                        <input type="text" class="form-control" formControlName="curp" placeholder="CURP"
+                            style="padding-bottom: 0px;padding-top: 0px;margin-top: 15px;">
+
+                        <small class="form-text"><p class="text-center">Introduzca la contraseña con la
+                            que iniciará sesión.</p></small>
+
+                        <input type="text" class="form-control" formControlName="contrasena" placeholder="Contraseña"
+                            style="padding-bottom: 0px;padding-top: 0px;margin-top: 15px;">
+
+
+
+                            <br>
+                            <div class="text-center">
+                            <span align-items: center *ngIf="submitted && createPaciente.invalid" class="badge badge-danger">TODOS LOS CAMPOS SON OBLIGATORIOS</span>
+                            </div>   
+                    </div>
+                    <div class="form-group mb-3"
+                        style="text-align: center;padding-bottom: 10px;padding-top: 1px;margin-top: 10px;margin-bottom: 16px;">
+                        <button class="btn btn-primary text-center link-danger" type="submit"
+                            style="background: var(--bs-gray-500);/*color: var(--bs-pink);*/padding-bottom: 16px;"><i
+                                class="fa fa-save"></i> Registrar</button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="tab-pane" role="tabpanel" id="tab-2">
+
+
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
